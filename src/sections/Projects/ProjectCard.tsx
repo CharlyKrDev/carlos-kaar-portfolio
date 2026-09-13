@@ -1,9 +1,9 @@
 import type { Project, ProjectStatus } from "../../types/project";
 
 const statusStyles: Record<ProjectStatus, string> = {
-  "in-development": "bg-violet-400",
-  production: "bg-teal-400",
-  completed: "bg-slate-500",
+  "in-development": "bg-accent",
+  production: "bg-success",
+  completed: "bg-dim",
 };
 
 type ProjectCardProps = {
@@ -15,31 +15,35 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <article
       className="
     flex
+    h-full
     flex-col
     gap-5
     border
-    border-slate-700
+    border-line
     p-6
-    text-slate-100
-    transition-colors
+    text-foreground
+    transition-[border-color,background-color,transform]
     duration-200
-    hover:border-slate-500
-    h-full
+    hover:-translate-y-0.5
+    hover:border-line-strong
+    hover:bg-surface/30
+    focus-within:border-line-strong
+    focus-within:bg-surface/30
   "
     >
       <header className="flex items-center justify-between">
-        <span className="font-mono text-sm text-slate-500">&gt;_</span>
+        <span className="font-mono text-sm text-dim">&gt;_</span>
         <span
           className="
     border
-    border-slate-700
+    border-line-strong
     px-2
     py-1
     font-mono
     text-xs
     uppercase
     tracking-wider
-    text-slate-400
+    text-muted
   "
         >
           {project.isPrivate ? "Private" : "Public"}
@@ -50,14 +54,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.title}
         </h3>
 
-        <p className="text-sm leading-6 text-slate-400">
-          {project.description}
-        </p>
+        <p className="text-sm leading-6 text-muted">{project.description}</p>
 
         <div className="flex items-center gap-2">
           <span className={`h-2 w-2 ${statusStyles[project.status]}`} />
 
-          <span className="font-mono text-xs uppercase tracking-wider text-slate-500">
+          <span className="font-mono text-xs uppercase tracking-wider text-dim">
             status: {project.status}
           </span>
         </div>
@@ -68,13 +70,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
             key={technology}
             className="
         border
-        border-slate-700
-        bg-slate-900
+        border-line-strong
+        bg-surface
         px-2
         py-1
         font-mono
         text-xs
-        text-slate-400
+        text-muted
       "
           >
             {technology}
@@ -90,10 +92,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
             className="
         font-mono
         text-sm
-        text-violet-400
+        text-accent
         transition-colors
         duration-200
-        hover:text-violet-300
+        hover:text-accent-hover
+        focus-ring
       "
           >
             &gt; repository
@@ -107,10 +110,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
             className="
         font-mono
         text-sm
-        text-violet-400
+        text-accent
         transition-colors
         duration-200
-        hover:text-violet-300
+        hover:text-accent-hover
+        focus-ring
       "
           >
             &gt; live project

@@ -20,7 +20,6 @@ export const projects: Project[] = [
     repositoryUrl:
       "https://github.com/CharlyKrDev/modular-ecommerce-backend-api",
     status: "completed",
-    liveUrl: "https://modular-ecommerce-backend-api.onrender.com",
   },
   {
     id: "centro-neurologia",

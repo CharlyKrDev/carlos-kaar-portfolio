@@ -1,14 +1,43 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navItems } from "../data/navigation";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+  useEffect(() => {
+    const sectionIds = ["home", ...navItems.map((item) => item.id)];
+
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((section) => section !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-30% 0px -60% 0px",
+      },
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950">
+    <header className="sticky top-0 z-50 border-b border-line bg-slate-950">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex items-center justify-between py-4">
-          <a href="#home" className="font-mono text-sm text-slate-200">
+          <a href="#home" className="font-mono text-sm text-slate-200 focus-ring">
             &gt;_ CKAAR
           </a>
 
@@ -18,7 +47,11 @@ export function Header() {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="font-mono text-xs uppercase tracking-wider text-slate-400 transition-colors duration-200 hover:text-violet-400"
+                    className={`font-mono text-xs uppercase tracking-wider transition-colors duration-200 ${
+                      activeSection === item.id
+                        ? "text-accent focus-ring"
+                        : "text-muted hover:text-accent focus-ring"
+                    }`}
                   >
                     {item.label}
                   </a>
@@ -42,7 +75,7 @@ export function Header() {
           <nav
             id="mobile-navigation"
             aria-label="Mobile navigation"
-            className="border-t border-slate-800 py-4 md:hidden"
+            className="border-t border-line py-4 md:hidden"
           >
             <ul className="space-y-4">
               {navItems.map((item) => (
@@ -50,7 +83,11 @@ export function Header() {
                   <a
                     href={`#${item.id}`}
                     onClick={() => setIsOpen(false)}
-                    className="block font-mono text-xs uppercase tracking-wider text-slate-400 transition-colors duration-200 hover:text-violet-400"
+                    className={`block font-mono text-xs uppercase tracking-wider transition-colors duration-200 ${
+                      activeSection === item.id
+                        ? "text-accent"
+                        : "text-muted hover:text-accent"
+                    }`}
                   >
                     &gt; {item.label}
                   </a>

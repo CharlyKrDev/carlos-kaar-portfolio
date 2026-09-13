@@ -4,18 +4,18 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-slate-800">
+    <footer className="border-t border-line">
       <div className="mx-auto max-w-6xl px-6 py-8">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="space-y-1">
             <a
               href="#home"
-              className="font-mono text-sm text-slate-200"
+              className="font-mono text-sm text-slate-200 focus-ring"
             >
               &gt;_ CKAAR
             </a>
 
-            <p className="font-mono text-xs text-slate-500">
+            <p className="font-mono text-xs text-dim">
               Junior Backend Developer
             </p>
           </div>
@@ -26,7 +26,7 @@ export function Footer() {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="font-mono text-xs uppercase tracking-wider text-slate-500 transition-colors duration-200 hover:text-violet-400"
+                    className="font-mono text-xs uppercase tracking-wider text-dim transition-colors duration-200 hover:text-accent focus-ring"
                   >
                     {item.label}
                   </a>
@@ -36,7 +36,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-8 border-t border-slate-800 pt-4">
+        <div className="mt-8 border-t border-line pt-4">
           <p className="font-mono text-xs text-slate-600">
             © {currentYear} Carlos Alberto Kaar
           </p>

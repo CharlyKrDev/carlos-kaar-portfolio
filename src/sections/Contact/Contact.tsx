@@ -37,7 +37,7 @@ export function Contact() {
         title="Let's build something useful."
         description="I'm currently open to Junior / Trainee Backend Developer opportunities and technology roles where I can continue building professional experience."
       />
-      <div className="border border-slate-800 p-6">
+      <div className="border border-line p-6">
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <dl className="space-y-4">
             {contactItems.map((item) => (
@@ -45,7 +45,7 @@ export function Contact() {
                 key={item.label}
                 className="grid gap-1 sm:grid-cols-[100px_1fr] sm:gap-4"
               >
-                <dt className="font-mono text-xs uppercase tracking-wider text-slate-500">
+                <dt className="font-mono text-xs uppercase tracking-wider text-dim">
                   {item.label}
                 </dt>
 
@@ -54,7 +54,7 @@ export function Contact() {
                     href={item.href}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
-                    className="text-sm text-slate-300 transition-colors duration-200 hover:text-violet-400"
+                    className="text-sm text-slate-300 transition-colors duration-200 hover:text-accent focus-ring"
                   >
                     {item.value}
                   </a>
@@ -67,14 +67,14 @@ export function Contact() {
             href="mailto:kaar.carlos@gmail.com"
             className="
         inline-flex min-w-44 items-center justify-center
-        border border-violet-400 bg-violet-400
+        border border-accent bg-accent
         px-5 py-3 font-mono text-sm text-slate-950
         transition-colors duration-200
-        hover:border-violet-300 hover:bg-violet-300
+        hover:border-accent-hover hover:bg-accent-hover focus-ring
       "
           >
             &gt; Send email
-          </a>
+          </a>  
         </div>
       </div>{" "}
     </SectionContainer>

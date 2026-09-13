@@ -1,11 +1,55 @@
 @import "tailwindcss";
 
-@layer base {
-  html {
-    @apply scroll-smooth;
-  }
+@theme {
+    --font-sans:
+        "Inter Variable",
+        ui-sans-serif,
+        system-ui,
+        sans-serif;
 
-  body {
-    @apply bg-slate-950 text-slate-100;
+    --font-mono:
+        "JetBrains Mono Variable",
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+
+    --color-canvas: #020617;
+
+    --color-surface: #0f172a;
+
+    --color-line: #1e293b;
+    --color-line-strong: #334155;
+
+    --color-foreground: #f1f5f9;
+    --color-muted: #94a3b8;
+    --color-dim: #64748b;
+
+    --color-accent: #a78bfa;
+    --color-accent-hover: #c4b5fd;
+    --color-accent-secondary: #2dd4bf;
+    --color-accent-secondary-strong: #14b8a6;
+    --color-accent-secondary-hover: #5eead4;
+
+    --color-success: #2dd4bf;
+    --color-success-hover: #5eead4;
+
+}
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply bg-canvas font-sans text-foreground;
+    }
+}
+@layer utilities {
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
   }
 }

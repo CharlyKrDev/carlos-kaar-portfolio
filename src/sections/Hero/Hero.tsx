@@ -6,7 +6,7 @@ export function Hero() {
     <section
       id="home"
       aria-labelledby="hero-title"
-      className="mx-auto max-w-6xl px-6 py-16"
+       className="mx-auto max-w-6xl px-6 py-16 md:py-20"
     >
       <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
         <HeroContent />

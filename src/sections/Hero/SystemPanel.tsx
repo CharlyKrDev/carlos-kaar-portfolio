@@ -42,11 +42,11 @@ const stackRows: SystemRowProps[] = [
 function SystemRow({ label, value, accent = false }: SystemRowProps) {
   return (
     <div className="grid grid-cols-[100px_1fr] gap-4">
-      <dt className="font-mono text-xs uppercase tracking-wider text-slate-500">
+      <dt className="font-mono text-xs uppercase tracking-wider text-dim">
         {label}
       </dt>
 
-      <dd className={`text-sm ${accent ? "text-teal-400" : "text-slate-300"}`}>
+      <dd className={`text-sm ${accent ? "text-success" : "text-slate-300"}`}>
         {value}
       </dd>
     </div>
@@ -59,9 +59,9 @@ export function SystemPanel() {
       aria-label="Developer prfile summary"
       className="border border-salte-700 p-6"
     >
-      <header className="flex items-center justify-between border-b boder-slate-800 pb-4">
+      <header className="flex items-center justify-between border-b boder-line pb-4">
         <p className="font-mono text-sm text-salte-300">SYSTEM / PROFILE</p>
-        <span className="font-mono text-xs uppercase tracking-wider text-teal-400">
+        <span className="font-mono text-xs uppercase tracking-wider text-success">
           online
         </span>
       </header>
@@ -75,8 +75,8 @@ export function SystemPanel() {
           />
         ))}
       </dl>
-      <div className="mt-6 border-t border-slate-800 pt-6">
-        <p className="font-mono text-xs uppercase tracking-widest text-slate-400">
+      <div className="mt-6 border-t border-line pt-6">
+        <p className="font-mono text-xs uppercase tracking-widest text-muted">
           Core / Stack
         </p>
 
