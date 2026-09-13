@@ -54,7 +54,7 @@ export function Contact() {
                     href={item.href}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
-                    className="text-sm text-slate-300 transition-colors duration-200 hover:text-accent focus-ring"
+                    className="text-sm text-foreground transition-colors duration-200 hover:text-accent focus-ring"
                   >
                     {item.value}
                   </a>
@@ -66,17 +66,18 @@ export function Contact() {
           <a
             href="mailto:kaar.carlos@gmail.com"
             className="
-        inline-flex min-w-44 items-center justify-center
-        border border-accent bg-accent
-        px-5 py-3 font-mono text-sm text-slate-950
-        transition-colors duration-200
-        hover:border-accent-hover hover:bg-accent-hover focus-ring
-      "
+    inline-flex min-w-44 items-center justify-center
+    border border-accent bg-accent
+    px-5 py-3 font-mono text-sm text-canvas
+    transition-colors duration-200
+    hover:border-accent-hover hover:bg-accent-hover
+    focus-ring
+  "
           >
             &gt; Send email
-          </a>  
+          </a>
         </div>
-      </div>{" "}
+      </div>
     </SectionContainer>
   );
 }

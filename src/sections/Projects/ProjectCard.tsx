@@ -11,6 +11,9 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const visibilityStyles = project.isPrivate
+    ? "border-accent/40 bg-accent/5 text-accent-hover"
+    : "border-accent-secondary/40 bg-accent-secondary/5 text-accent-secondary";
   return (
     <article
       className="
@@ -24,7 +27,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
     text-foreground
     transition-[border-color,background-color,transform]
     duration-200
-    hover:-translate-y-0.5
     hover:border-line-strong
     hover:bg-surface/30
     focus-within:border-line-strong
@@ -34,17 +36,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
       <header className="flex items-center justify-between">
         <span className="font-mono text-sm text-dim">&gt;_</span>
         <span
-          className="
-    border
-    border-line-strong
-    px-2
-    py-1
-    font-mono
-    text-xs
-    uppercase
-    tracking-wider
-    text-muted
-  "
+          className={`
+            border
+            border-line-strong
+            px-2
+            py-1
+            font-mono
+            text-xs
+            uppercase
+            tracking-wider
+            ${visibilityStyles}
+            `}
         >
           {project.isPrivate ? "Private" : "Public"}
         </span>

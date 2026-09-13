@@ -5,13 +5,15 @@ export const skillCategories: SkillCategory[] = [
     id: "backend",
     title: "Backend",
     skills: [
-      "JavaScript",
-      "TypeScript",
       "Node.js",
+      "JavaScript",
       "Express.js",
       "REST APIs",
+      "API Integrations",
+      "TypeScript",
     ],
   },
+
   {
     id: "data",
     title: "Data",
@@ -21,6 +23,7 @@ export const skillCategories: SkillCategory[] = [
       "MongoDB",
     ],
   },
+
   {
     id: "testing",
     title: "Testing",
@@ -33,6 +36,7 @@ export const skillCategories: SkillCategory[] = [
       "Contract Testing",
     ],
   },
+
   {
     id: "workflow",
     title: "Workflow",

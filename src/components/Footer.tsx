@@ -1,4 +1,5 @@
 import { navItems } from "../data/navigation";
+import { BrandMark } from "./BrandMark";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,9 +11,10 @@ export function Footer() {
           <div className="space-y-1">
             <a
               href="#home"
-              className="font-mono text-sm text-slate-200 focus-ring"
+              className="focus-ring"
+              aria-label="Carlos Kaar — Home"
             >
-              &gt;_ CKAAR
+              <BrandMark />
             </a>
 
             <p className="font-mono text-xs text-dim">
@@ -37,7 +39,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t border-line pt-4">
-          <p className="font-mono text-xs text-slate-600">
+          <p className="font-mono text-xs text-dim">
             © {currentYear} Carlos Alberto Kaar
           </p>
         </div>

@@ -90,6 +90,12 @@ export function SystemPanel() {
             />
           ))}
         </dl>
+        <div className="mt-6 border-t border-line pt-4">
+          <p className="font-mono text-xs text-dim">
+            <span className="text-accent">&gt;_</span> profile loaded
+            <span className="ml-2 text-accent-secondary">•</span>
+          </p>
+        </div>
       </div>
     </aside>
   );

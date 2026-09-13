@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { navItems } from "../data/navigation";
+import { BrandMark } from "./BrandMark";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,11 +35,15 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-slate-950">
+    <header className="sticky top-0 z-50 border-b border-line bg-canvas/95 backdrop-blur-sm">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex items-center justify-between py-4">
-          <a href="#home" className="font-mono text-sm text-slate-200 focus-ring">
-            &gt;_ CKAAR
+          <a
+            href="#home"
+            className="focus-ring"
+            aria-label="Carlos Kaar — Home"
+          >
+            <BrandMark />
           </a>
 
           <nav aria-label="Main navigation" className="hidden md:block">
@@ -47,10 +52,10 @@ export function Header() {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className={`font-mono text-xs uppercase tracking-wider transition-colors duration-200 ${
+                    className={`font-mono text-xs uppercase tracking-wider transition-colors duration-200 focus-ring ${
                       activeSection === item.id
-                        ? "text-accent focus-ring"
-                        : "text-muted hover:text-accent focus-ring"
+                        ? "text-accent"
+                        : "text-muted hover:text-accent"
                     }`}
                   >
                     {item.label}
@@ -65,7 +70,7 @@ export function Header() {
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-controls="mobile-navigation"
-            className="font-mono text-xs uppercase tracking-wider text-slate-300 md:hidden"
+            className="font-mono text-xs uppercase tracking-wider text-muted focus-ring md:hidden"
           >
             {isOpen ? "[ close ]" : "[ menu ]"}
           </button>
@@ -83,7 +88,7 @@ export function Header() {
                   <a
                     href={`#${item.id}`}
                     onClick={() => setIsOpen(false)}
-                    className={`block font-mono text-xs uppercase tracking-wider transition-colors duration-200 ${
+                    className={`block font-mono text-xs uppercase tracking-wider transition-colors duration-200 focus-ring ${
                       activeSection === item.id
                         ? "text-accent"
                         : "text-muted hover:text-accent"

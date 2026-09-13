@@ -16,7 +16,6 @@ export function CertificationCard({ certification }: CertificationCardProps) {
     p-5
     transition-[border-color,background-color,transform]
     duration-200
-    hover:-translate-y-0.5
     hover:border-line-strong
     hover:bg-surface/30
     focus-within:border-line-strong
