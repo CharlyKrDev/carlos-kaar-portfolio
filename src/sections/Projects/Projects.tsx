@@ -3,14 +3,26 @@ import { projects } from "../../data/projects";
 
 export function Projects() {
   return (
-    <section className="mx-auto max-w-6xl border-t border-slate-800 px-6 py-16">
-      
+    <section
+      id="projects"
+      aria-labelledby="projects-title"
+      className="mx-auto max-w-6xl border-t border-slate-800 px-6 py-16"
+    >
       <header className="mb-8 space-y-2">
-        <p className="font-mono text-xs uppercase tracking-widest text-violet-400">
-          03 / Projects
-        </p>
+        <div className="flex items-center gap-3">
+          <span className="font-mono text-xs text-violet-400">02</span>
 
-        <h2 className="text-3xl font-semibold tracking-tight text-slate-100">
+          <span className="h-px w-8 bg-slate-700" />
+
+          <span className="font-mono text-xs font-medium uppercase tracking-widest text-slate-400">
+            Projects
+          </span>
+        </div>
+
+        <h2
+          id="projects-title"
+          className="text-3xl font-semibold tracking-tight text-slate-100"
+        >
           Selected Work
         </h2>
 
