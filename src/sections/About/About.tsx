@@ -1,6 +1,6 @@
 import { SectionHeader } from "../../components/SectionHeader";
 import { SectionContainer } from "../../components/SectionContainer";
-import profilePhoto from "../../assets/carlos-kaar-profile.webp"
+import profilePhoto from "../../assets/carlos-kaar-profile.webp";
 
 export function About() {
   return (
@@ -14,7 +14,6 @@ export function About() {
 
       <div className="grid gap-10 lg:grid-cols-[2fr_3fr]">
         <div className="w-full max-w-sm justify-self-center border border-line-strong p-5 lg:justify-self-start">
-          
           <div className="mb-4 flex items-center justify-between">
             <span className="font-mono text-xs uppercase tracking-wider text-success">
               online
@@ -28,6 +27,8 @@ export function About() {
             <img
               src={profilePhoto}
               alt="Carlos Alberto Kaar"
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover object-center"
             />
 
