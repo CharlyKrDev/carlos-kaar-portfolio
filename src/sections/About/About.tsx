@@ -1,6 +1,6 @@
 import { SectionHeader } from "../../components/SectionHeader";
 import { SectionContainer } from "../../components/SectionContainer";
-import profilePhoto from "../../assets/carlos-kaar-profile.png";
+import profilePhoto from "../../assets/carlos-kaar-profile.webp"
 
 export function About() {
   return (
