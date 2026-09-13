@@ -1,75 +1,271 @@
-# React + TypeScript + Vite
+# Carlos Alberto Kaar — Backend Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal developer portfolio built with React, TypeScript, Vite and Tailwind CSS.
 
-Currently, two official plugins are available:
+The project presents my backend development work, technical stack, professional background and certifications through a responsive single-page interface with a technical / system-inspired visual language.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+> Currently under active development and visual refinement.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## About the Project
 
-## Expanding the ESLint configuration
+This portfolio was built from scratch as both a professional website and a practical frontend learning project.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The main goal is to present my profile as a Junior Backend Developer while keeping the interface focused on clarity, maintainability, accessibility and responsive design.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Rather than using a pre-built portfolio template, the UI and component architecture were designed specifically for this project.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Tech Stack
 
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Inter Variable
+- JetBrains Mono Variable
+
+---
+
+## Main Sections
+
+The portfolio is organized as a single-page application:
+
+1. Hero
+2. Projects
+3. About
+4. Skills
+5. Certifications
+6. Contact
+
+It also includes:
+
+- Sticky responsive navigation
+- Mobile menu
+- Active section navigation
+- Downloadable CV
+- Responsive layouts
+- Keyboard focus states
+- Semantic HTML
+- SEO metadata
+- Open Graph metadata
+- Sitemap
+- robots.txt
+
+---
+
+## Featured Projects
+
+### BETTY
+
+Private backend system for financial-market analysis and trading signals.
+
+Main technologies:
+
+- Node.js
+- Express
+- Jest
+- Supertest
+
+---
+
+### E-commerce Backend API
+
+Modular REST API for managing products, users and application data.
+
+Main technologies:
+
+- Node.js
+- Express
+- PostgreSQL
+- Jest
+
+Repository:
+
+https://github.com/CharlyKrDev/modular-ecommerce-backend-api
+
+---
+
+### Centro de Neurología
+
+Production website developed for a medical center in Argentina, with focus on performance, accessibility and technical SEO.
+
+Main technologies:
+
+- JavaScript
+- Tailwind CSS
+- Cloudflare
+
+Repository:
+
+https://github.com/CharlyKrDev/centrodeneurologia
+
+Live website:
+
+https://www.centrodeneurologia.com.ar/
+
+---
+
+## Architecture
+
+The project separates reusable UI, page sections, data and TypeScript models.
+
+```text
+src/
+├── components/
+│   ├── Footer.tsx
+│   ├── Header.tsx
+│   ├── SectionContainer.tsx
+│   └── SectionHeader.tsx
+│
+├── data/
+│   ├── certifications.ts
+│   ├── navigation.ts
+│   ├── projects.ts
+│   └── skills.ts
+│
+├── sections/
+│   ├── About/
+│   ├── Certifications/
+│   ├── Contact/
+│   ├── Hero/
+│   ├── Projects/
+│   └── Skills/
+│
+├── types/
+│   ├── certification.ts
+│   ├── project.ts
+│   └── skill.ts
+│
+├── App.tsx
+├── index.css
+└── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Design System
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The interface uses semantic design tokens instead of coupling components directly to specific Tailwind colors.
 
+Examples:
+
+```text
+canvas
+surface
+line
+line-strong
+foreground
+muted
+dim
+accent
+accent-secondary
+success
 ```
+
+Typography also follows a functional distinction:
+
+- **Inter** → primary content and readable text
+- **JetBrains Mono** → navigation, metadata, system labels and technical details
+
+The visual direction combines a dark technical interface with restrained terminal-inspired elements without adopting a traditional hacker or gaming aesthetic.
+
+---
+
+## Accessibility
+
+The project currently includes:
+
+- Semantic HTML landmarks
+- `aria-labelledby` relationships
+- Accessible navigation labels
+- `aria-expanded` for the mobile menu
+- Keyboard navigation
+- Visible keyboard focus states
+- Responsive typography and layout
+
+---
+
+## SEO
+
+Implemented:
+
+- Page title
+- Meta description
+- Author metadata
+- Canonical URL
+- Open Graph metadata
+- Social preview image
+- Favicon
+- `robots.txt`
+- `sitemap.xml`
+
+Production domain:
+
+`carloskaar.dev`
+
+---
+
+## Running Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/CharlyKrDev/carlos-kaar-portfolio.git
+```
+
+Enter the project:
+
+```bash
+cd carlos-kaar-portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+---
+
+## Current Status
+
+The main application architecture and responsive layout are complete.
+
+Current work focuses on:
+
+- Visual polish
+- Final branding
+- About profile photo
+- Microinteraction review
+- Content review
+- Final SEO validation
+- Performance and Lighthouse testing
+- Production deployment
+
+---
+
+## Author
+
+**Carlos Alberto Kaar**
+
+Junior Backend Developer  
+Piacenza, Italy
+
+- GitHub: https://github.com/CharlyKrDev
+- LinkedIn: https://www.linkedin.com/in/carlos-alberto-kaar
+- Portfolio: https://carloskaar.dev
