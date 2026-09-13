@@ -7,7 +7,7 @@ export const certifications: Certification[] = [
     issuer: "Coderhouse",
     year: 2024,
     achievement: "Top 10",
-    credentialUrl: "/certificates/66fb63adeec0c6579738f6bf.png",
+    credentialUrl: "/certificates/backend-development.png",
     skills: ["Node.js", "Express.js", "MongoDB", "REST APIs", "Supertest"],
   },
   {
@@ -16,7 +16,7 @@ export const certifications: Certification[] = [
     issuer: "Coderhouse",
     year: 2024,
     achievement: "Top 10",
-    credentialUrl:"/certificates/660da510b9ab6ed60fd2762a.png",
+    credentialUrl:"/certificates/full-stack-react-developer.png",
     skills: ["JavaScript", "React", "Node.js", "Express.js", "MongoDB"],
   },
   {
@@ -24,7 +24,7 @@ export const certifications: Certification[] = [
     title: "GitHub Universe 2023 Cloud Skills Challenge",
     issuer: "Microsoft Learn",
     year: 2023,
-    credentialUrl:"/certificates/logro microsoft git.png",
+    credentialUrl:"/certificates/github-universe-cloud.png",
     skills: ["Git", "GitHub", "GitHub Codespaces"],
   },
   {
@@ -33,7 +33,7 @@ export const certifications: Certification[] = [
     issuer: "Coderhouse",
     year: 2023,
     achievement: "Top 10",
-    credentialUrl:"/certificates/2-KjeVkFnY.png",
+    credentialUrl:"/certificates/javascript.png",
     skills: ["JavaScript", "Asynchronous Programming", "API Integration"],
   },
   {
@@ -41,7 +41,7 @@ export const certifications: Certification[] = [
     title: "Data & Analytics — Starter Level",
     issuer: "Grupo Financiero Galicia / Datalytics",
     year: 2023,
-    credentialUrl:"/certificates/ACFrOgDyIAETaAf3nhRCGp21cYx5_zNInAIL0xxTYfvDJbIuO9puEzhx9dtpDGVswqVxVvBOYzb69RFKr5rAz2tA4dZUZNk8N5AjVTIPPLVwhYImCbhrjLhP8C4tRk3SQvE-0pXkh7IuAV-QYw17AnWZFFtrFd9c0YeNPqyNmA==.pdf",
+    credentialUrl:"/certificates/Data & Analytics — Starter Level.png",
     skills: ["SQL", "PostgreSQL", "Data Analysis"]
   },
   {
