@@ -5,6 +5,7 @@ export type Project = {
   technologies: string[];
   isPrivate: boolean;
   repositoryUrl?: string;
+  documentationUrl?: string;
   status: ProjectStatus;
   liveUrl?: string;
 };

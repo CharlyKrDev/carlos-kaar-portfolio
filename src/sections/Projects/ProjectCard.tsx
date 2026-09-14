@@ -14,6 +14,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const visibilityStyles = project.isPrivate
     ? "border-accent/40 bg-accent/5 text-accent-hover"
     : "border-accent-secondary/40 bg-accent-secondary/5 text-accent-secondary";
+
   return (
     <article
       className="
@@ -51,6 +52,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.isPrivate ? "Private" : "Public"}
         </span>
       </header>
+
       <div className="space-y-3">
         <h3 className="text-xl font-semibold tracking-tight">
           {project.title}
@@ -66,6 +68,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </span>
         </div>
       </div>
+
       <ul className="flex flex-wrap gap-2">
         {project.technologies.map((technology) => (
           <li
@@ -85,7 +88,27 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </li>
         ))}
       </ul>
+
       <div className="mt-auto flex flex-wrap gap-4">
+        {project.documentationUrl && (
+          <a
+            href={project.documentationUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="
+        font-mono
+        text-sm
+        text-accent
+        transition-colors
+        duration-200
+        hover:text-accent-hover
+        focus-ring
+      "
+          >
+            &gt; technical overview
+          </a>
+        )}
+
         {project.repositoryUrl && (
           <a
             href={project.repositoryUrl}
@@ -104,6 +127,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             &gt; repository
           </a>
         )}
+
         {project.liveUrl && (
           <a
             href={project.liveUrl}
