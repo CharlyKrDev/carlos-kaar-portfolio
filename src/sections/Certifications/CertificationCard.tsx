@@ -24,7 +24,7 @@ export function CertificationCard({ certification }: CertificationCardProps) {
     >
       <header className="flex items-start justify-between gap-4">
         <div>
-          <p className="font-mono text-xs uppercase tracking-wider text-dim">
+          <p className="font-mono text-xs uppercase tracking-wider text-accent-secondary">
             {certification.issuer}
           </p>
 
