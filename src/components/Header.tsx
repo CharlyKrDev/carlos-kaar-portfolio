@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
+
 import { navItems } from "../data/navigation";
+
 import { BrandMark } from "./BrandMark";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+
   useEffect(() => {
     const sectionIds = ["home", ...navItems.map((item) => item.id)];
 
@@ -12,25 +16,32 @@ export function Header() {
       .map((id) => document.getElementById(id))
       .filter((section) => section !== null);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: "-30% 0px -60% 0px",
-      },
-    );
+    const updateActiveSection = () => {
+      const triggerPoint = window.innerHeight * 0.35;
 
-    sections.forEach((section) => {
-      observer.observe(section);
+      const currentSection = sections.find((section) => {
+        const rect = section.getBoundingClientRect();
+
+        return rect.top <= triggerPoint && rect.bottom > triggerPoint;
+      });
+
+      if (currentSection) {
+        setActiveSection(currentSection.id);
+      }
+    };
+
+    updateActiveSection();
+
+    window.addEventListener("scroll", updateActiveSection, {
+      passive: true,
     });
 
+    window.addEventListener("resize", updateActiveSection);
+
     return () => {
-      observer.disconnect();
+      window.removeEventListener("scroll", updateActiveSection);
+
+      window.removeEventListener("resize", updateActiveSection);
     };
   }, []);
 
@@ -46,31 +57,49 @@ export function Header() {
             <BrandMark />
           </a>
 
-          <nav aria-label="Main navigation" className="hidden md:block">
-            <ul className="flex items-center gap-6">
-              {navItems.map((item) => (
-                <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    className={`font-mono text-xs uppercase tracking-wider transition-colors duration-200 focus-ring ${
-                      activeSection === item.id
-                        ? "text-accent"
-                        : "text-muted hover:text-accent"
-                    }`}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div className="hidden items-center gap-6 md:flex">
+            <nav aria-label="Main navigation">
+              <ul className="flex items-center gap-6">
+                {navItems.map((item) => (
+                  <li key={item.id}>
+                    <a
+                      href={`#${item.id}`}
+                      className={`font-mono text-xs uppercase tracking-wider transition-colors duration-200 focus-ring ${
+                        activeSection === item.id
+                          ? "text-accent"
+                          : "text-muted hover:text-accent"
+                      }`}
+                    >
+                      {activeSection === item.id && (
+                        <span className="text-accent-secondary">[</span>
+                      )}
+                      <span
+                        className={
+                          activeSection === item.id ? "text-accent" : ""
+                        }
+                      >
+                        {item.label}
+                      </span>
+                      {activeSection === item.id && (
+                        <span className="text-accent-secondary">]</span>
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <div className="border-l border-line pl-5">
+              <LanguageSwitcher />
+            </div>
+          </div>
 
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-controls="mobile-navigation"
-            className="font-mono text-xs uppercase tracking-wider text-muted focus-ring md:hidden"
+            className="font-mono text-xs uppercase tracking-wider text-muted focus-ring md:hidden cursor-pointer"
           >
             {isOpen ? "[ close ]" : "[ menu ]"}
           </button>
@@ -94,11 +123,26 @@ export function Header() {
                         : "text-muted hover:text-accent"
                     }`}
                   >
-                    &gt; {item.label}
+                    &gt;
+                    {activeSection === item.id && (
+                      <span className="text-accent-secondary">[</span>
+                    )}
+                    <span
+                      className={activeSection === item.id ? "text-accent" : ""}
+                    >
+                      {item.label}
+                    </span>
+                    {activeSection === item.id && (
+                      <span className="text-accent-secondary">]</span>
+                    )}
                   </a>
                 </li>
               ))}
             </ul>
+
+            <div className="mt-5 border-t border-line pt-4">
+              <LanguageSwitcher />
+            </div>
           </nav>
         )}
       </div>
