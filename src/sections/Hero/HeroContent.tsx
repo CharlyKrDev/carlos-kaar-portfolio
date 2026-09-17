@@ -1,4 +1,7 @@
+import { useLanguage } from "../../i18n/LanguageContext";
 export function HeroContent() {
+  const { t } = useLanguage();
+
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
@@ -12,7 +15,7 @@ export function HeroContent() {
       </div>
 
       <div className="space-y-3">
-        <p className="font-mono text-sm text-muted">Hi, I&apos;m</p>
+        <p className="font-mono text-sm text-muted">{t.hero.greeting}</p>
 
         <h1
           id="hero-title"
@@ -21,12 +24,10 @@ export function HeroContent() {
           Carlos Alberto Kaar
         </h1>
         <p className="text-lg font-medium text-slate-300 sm:text-xl">
-          Junior Backend Developer
+          {t.hero.role}
         </p>
         <p className="max-w-xl text-sm leading-6 text-muted sm:text-base">
-          Backend developer focused on building reliable APIs, data integrations
-          and maintainable server-side systems with Node.js, Express and
-          PostgreSQL.
+          {t.hero.description}
         </p>
       </div>
       <div className="flex flex-wrap gap-4 pt-2">
@@ -52,7 +53,7 @@ export function HeroContent() {
         focus-ring
       "
         >
-          &gt; View projects
+          &gt; {t.hero.viewProjects}
         </a>
 
         <a
@@ -77,7 +78,7 @@ export function HeroContent() {
           hover:text-accent-secondary-hover
         "
         >
-          &gt; Download CV
+          &gt; {t.hero.downloadCv}
         </a>
       </div>
     </div>
