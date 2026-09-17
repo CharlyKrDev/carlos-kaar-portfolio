@@ -1,4 +1,14 @@
 export type TranslationDictionary = {
+  navigation: {
+    projects: string;
+    about: string;
+    skills: string;
+    certifications: string;
+    contact: string;
+    menu: string;
+    close: string;
+  };
+
   hero: {
     greeting: string;
     role: string;

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 import { navItems } from "../data/navigation";
 
@@ -8,6 +9,7 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const { t } = useLanguage();
 
   useEffect(() => {
     const sectionIds = ["home", ...navItems.map((item) => item.id)];
@@ -78,7 +80,7 @@ export function Header() {
                           activeSection === item.id ? "text-accent" : ""
                         }
                       >
-                        {item.label}
+                        {t.navigation[item.id]}{" "}
                       </span>
                       {activeSection === item.id && (
                         <span className="text-accent-secondary">]</span>
@@ -130,7 +132,7 @@ export function Header() {
                     <span
                       className={activeSection === item.id ? "text-accent" : ""}
                     >
-                      {item.label}
+                      {t.navigation[item.id]}
                     </span>
                     {activeSection === item.id && (
                       <span className="text-accent-secondary">]</span>

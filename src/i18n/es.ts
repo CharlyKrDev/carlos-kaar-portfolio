@@ -9,4 +9,13 @@ export const es: TranslationDictionary = {
     viewProjects: "Ver proyectos",
     downloadCv: "Descargar CV",
   },
+  navigation: {
+    projects: "Proyectos",
+    about: "Sobre mí",
+    skills: "Habilidades",
+    certifications: "Certificaciones",
+    contact: "Contacto",
+    menu: "Menú",
+    close: "Cerrar",
+  },
 };
