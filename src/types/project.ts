@@ -1,5 +1,5 @@
 export type Project = {
-  id: string;
+  id: ProjectId;
   title: string;
   description: string;
   technologies: string[];
@@ -9,5 +9,5 @@ export type Project = {
   status: ProjectStatus;
   liveUrl?: string;
 };
-
+export type ProjectId = "betty" | "ecommerce-api" | "centro-neurologia";
 export type ProjectStatus = "in-development" | "production" | "completed";
