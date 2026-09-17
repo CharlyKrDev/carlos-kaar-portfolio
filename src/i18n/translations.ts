@@ -7,3 +7,14 @@ export type TranslationDictionary = {
     downloadCv: string;
   };
 };
+
+import type { Language } from "./language";
+import { en } from "./en";
+import { es } from "./es";
+import { it } from "./it";
+
+export const translations: Record<Language, TranslationDictionary> = {
+  en,
+  es,
+  it,
+};
