@@ -58,6 +58,11 @@ export type TranslationDictionary = {
       problemSolving: string;
     };
   };
+  skills: {
+    label: string;
+    title: string;
+    description: string;
+  };
 };
 
 import type { Language } from "./language";

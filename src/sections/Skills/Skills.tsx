@@ -1,16 +1,18 @@
 import { SectionHeader } from "../../components/SectionHeader";
 import { SectionContainer } from "../../components/SectionContainer";
 import { skillCategories } from "../../data/skills";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 export function Skills() {
+  const {t} = useLanguage()
   return (
     <SectionContainer id="skills" labelledBy="skills-title">
       <SectionHeader
         id="skills-title"
         number="04"
-        label="Skills"
-        title="Technical Stack"
-        description="Technologies and practices I use to build, test and maintain backend systems."
+        label={t.skills.label}
+        title={t.skills.title}
+        description={t.skills.description}
       />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {skillCategories.map((category) => (

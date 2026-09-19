@@ -81,4 +81,10 @@ export const it: TranslationDictionary = {
       problemSolving: "Problem Solving",
     },
   },
+  skills: {
+    label: "Competenze",
+    title: "Stack tecnico",
+    description:
+      "Tecnologie e pratiche che utilizzo per sviluppare, testare e mantenere sistemi backend.",
+  },
 };

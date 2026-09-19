@@ -81,4 +81,10 @@ export const en: TranslationDictionary = {
       problemSolving: "Problem Solving",
     },
   },
+  skills: {
+    label: "Skills",
+    title: "Technical Stack",
+    description:
+      "Technologies and practices I use to build, test and maintain backend systems.",
+  },
 };
