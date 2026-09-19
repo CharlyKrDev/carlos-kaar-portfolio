@@ -1,7 +1,7 @@
 import { useLanguage } from "../../i18n/LanguageContext";
+import { cvByLanguage } from "../../data/cv";
 export function HeroContent() {
-  const { t } = useLanguage();
-
+  const { t, language } = useLanguage();
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
@@ -23,7 +23,7 @@ export function HeroContent() {
         >
           Carlos Alberto Kaar
         </h1>
-        <p className="text-lg font-medium text-slate-300 sm:text-xl">
+        <p className="text-lg font-medium text-foreground-subtle sm:text-xl">
           {t.common.role}
         </p>
         <p className="max-w-xl text-sm leading-6 text-muted sm:text-base">
@@ -57,7 +57,7 @@ export function HeroContent() {
         </a>
 
         <a
-          href="/cv/Carlos_Alberto_Kaar_CV_EN.pdf"
+          href={cvByLanguage[language]}
           download
           className="
           focus-ring
