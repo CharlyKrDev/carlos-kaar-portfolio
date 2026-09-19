@@ -3,7 +3,6 @@ import type { TranslationDictionary } from "./translations";
 export const it: TranslationDictionary = {
   hero: {
     greeting: "Ciao, sono",
-    role: "Junior Backend Developer",
     description:
       "Backend developer focalizzato sulla creazione di API affidabili, integrazioni di dati e sistemi server-side manutenibili con Node.js, Express e PostgreSQL.",
     viewProjects: "Vedi progetti",
@@ -61,7 +60,6 @@ export const it: TranslationDictionary = {
   about: {
     label: "Chi_sono",
     title: "Chi sono",
-    role: "Junior Backend Developer",
     intro: "Dalle operations ai sistemi backend.",
     headline:
       "Pensiero analitico, disciplina operativa e un approccio pratico allo sviluppo backend.",
@@ -96,5 +94,18 @@ export const it: TranslationDictionary = {
     actions: {
       viewCredential: "Vedi certificato",
     },
+  },
+  contact: {
+    label: "Contatti",
+    title: "Costruiamo qualcosa di utile.",
+    description:
+      "Sono attualmente disponibile per opportunità come Junior / Trainee Backend Developer e per ruoli nel settore tecnologico in cui possa continuare a sviluppare esperienza professionale.",
+
+    actions: {
+      sendEmail: "Invia email",
+    },
+  },
+  common: {
+    role: "Junior Backend Developer",
   },
 };

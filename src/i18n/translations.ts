@@ -11,7 +11,6 @@ export type TranslationDictionary = {
 
   hero: {
     greeting: string;
-    role: string;
     description: string;
     viewProjects: string;
     downloadCv: string;
@@ -44,7 +43,6 @@ export type TranslationDictionary = {
   about: {
     label: string;
     title: string;
-    role: string;
     intro: string;
     headline: string;
     paragraphs: {
@@ -71,6 +69,18 @@ export type TranslationDictionary = {
     actions: {
       viewCredential: string;
     };
+  };
+  contact: {
+    label: string;
+    title: string;
+    description: string;
+
+    actions: {
+      sendEmail: string;
+    };
+  };
+  common: {
+    role: string;
   };
 };
 

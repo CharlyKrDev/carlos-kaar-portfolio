@@ -24,7 +24,7 @@ export function HeroContent() {
           Carlos Alberto Kaar
         </h1>
         <p className="text-lg font-medium text-slate-300 sm:text-xl">
-          {t.hero.role}
+          {t.common.role}
         </p>
         <p className="max-w-xl text-sm leading-6 text-muted sm:text-base">
           {t.hero.description}

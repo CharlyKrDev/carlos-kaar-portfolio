@@ -43,7 +43,7 @@ export function About() {
               Carlos Alberto Kaar
             </p>
 
-            <p className="mt-1 text-sm text-muted">{t.about.role}</p>
+            <p className="mt-1 text-sm text-muted">{t.common.role}</p>
           </div>
         </div>
 

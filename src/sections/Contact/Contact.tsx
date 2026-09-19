@@ -1,5 +1,6 @@
 import { SectionContainer } from "../../components/SectionContainer";
 import { SectionHeader } from "../../components/SectionHeader";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 type ContactItem = {
   label: string;
@@ -28,15 +29,15 @@ const contactItems: ContactItem[] = [
   },
 ];
 export function Contact() {
+  const { t } = useLanguage();
   return (
     <SectionContainer id="contact" labelledBy="contact-title">
       <SectionHeader
         id="contact-title"
         number="06"
-        label="Contact"
-        title="Let's build something useful."
-        description="I'm currently open to Junior / Trainee Backend Developer opportunities and technology roles where I can continue building professional experience."
-      />
+        label={t.contact.label}
+        title={t.contact.title}
+        description={t.contact.description}/>
       <div className="border border-line p-6">
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <dl className="space-y-4">
@@ -74,7 +75,7 @@ export function Contact() {
     focus-ring
   "
           >
-            &gt; Send email
+            &gt; {t.contact.actions.sendEmail}
           </a>
         </div>
       </div>

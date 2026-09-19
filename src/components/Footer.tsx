@@ -1,4 +1,3 @@
-import { navItems } from "../data/navigation";
 import { BrandMark } from "./BrandMark";
 
 export function Footer() {
@@ -22,23 +21,6 @@ export function Footer() {
             </p>
           </div>
 
-          <nav aria-label="Footer navigation">
-            <ul className="flex flex-wrap gap-x-5 gap-y-3">
-              {navItems.map((item) => (
-                <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    className="font-mono text-xs uppercase tracking-wider text-dim transition-colors duration-200 hover:text-accent focus-ring"
-                  >
-                    {item.id}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-
-        <div className="mt-8 border-t border-line pt-4">
           <p className="font-mono text-xs text-dim">
             © {currentYear} Carlos Alberto Kaar
           </p>
