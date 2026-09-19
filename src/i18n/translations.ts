@@ -16,6 +16,48 @@ export type TranslationDictionary = {
     viewProjects: string;
     downloadCv: string;
   };
+  projects: {
+    label: string;
+    title: string;
+    sectionDescription: string;
+
+    visibility: {
+      private: string;
+      public: string;
+    };
+
+    status: Record<ProjectStatus, string>;
+
+    actions: {
+      repository: string;
+      liveSite: string;
+      technicalOverview: string;
+    };
+
+    items: Record<
+      ProjectId,
+      {
+        description: string;
+      }
+    >;
+  };
+  about: {
+    label: string;
+    title: string;
+    role: string;
+    intro: string;
+    headline: string;
+    paragraphs: {
+      background: string;
+      present: string;
+    };
+    traits: {
+      analyticalThinking: string;
+      processReliability: string;
+      continuousLearning: string;
+      problemSolving: string;
+    };
+  };
 };
 
 import type { Language } from "./language";
@@ -28,3 +70,5 @@ export const translations: Record<Language, TranslationDictionary> = {
   es,
   it,
 };
+
+import type { ProjectId, ProjectStatus } from "../types/project";

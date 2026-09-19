@@ -1,4 +1,5 @@
 import type { Project, ProjectStatus } from "../../types/project";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const statusStyles: Record<ProjectStatus, string> = {
   "in-development": "bg-accent",
@@ -14,6 +15,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const visibilityStyles = project.isPrivate
     ? "border-accent/40 bg-accent/5 text-accent-hover"
     : "border-accent-secondary/40 bg-accent-secondary/5 text-accent-secondary";
+  const { t } = useLanguage();
+
+  const projectTranslation = t.projects.items[project.id];
 
   return (
     <article
@@ -49,7 +53,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
             ${visibilityStyles}
             `}
         >
-          {project.isPrivate ? "Private" : "Public"}
+          {project.isPrivate
+            ? t.projects.visibility.private
+            : t.projects.visibility.public}
         </span>
       </header>
 
@@ -57,14 +63,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <h3 className="text-xl font-semibold tracking-tight">
           {project.title}
         </h3>
-
-        <p className="text-sm leading-6 text-muted">{project.description}</p>
-
+        <p className="text-sm leading-6 text-muted">
+          {projectTranslation.description}
+        </p>
         <div className="flex items-center gap-2">
           <span className={`h-2 w-2 ${statusStyles[project.status]}`} />
 
           <span className="font-mono text-xs uppercase tracking-wider text-dim">
-            status: {project.status}
+            status: {t.projects.status[project.status]}
           </span>
         </div>
       </div>
@@ -105,7 +111,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         focus-ring
       "
           >
-            &gt; technical overview
+            &gt; {t.projects.actions.technicalOverview}
           </a>
         )}
 
@@ -124,7 +130,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         focus-ring
       "
           >
-            &gt; repository
+            &gt; {t.projects.actions.repository}
           </a>
         )}
 
@@ -143,7 +149,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         focus-ring
       "
           >
-            &gt; live project
+            &gt; {t.projects.actions.liveSite}
           </a>
         )}
       </div>

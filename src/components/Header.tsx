@@ -80,7 +80,7 @@ export function Header() {
                           activeSection === item.id ? "text-accent" : ""
                         }
                       >
-                        {t.navigation[item.id]}{" "}
+                        {t.navigation[item.id]}
                       </span>
                       {activeSection === item.id && (
                         <span className="text-accent-secondary">]</span>

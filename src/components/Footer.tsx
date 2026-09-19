@@ -30,7 +30,7 @@ export function Footer() {
                     href={`#${item.id}`}
                     className="font-mono text-xs uppercase tracking-wider text-dim transition-colors duration-200 hover:text-accent focus-ring"
                   >
-                    {item.label}
+                    {item.id}
                   </a>
                 </li>
               ))}

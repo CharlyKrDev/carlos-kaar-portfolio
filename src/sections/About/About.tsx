@@ -1,15 +1,17 @@
 import { SectionHeader } from "../../components/SectionHeader";
 import { SectionContainer } from "../../components/SectionContainer";
 import profilePhoto from "../../assets/carlos-kaar-profile.webp";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 export function About() {
+  const { t } = useLanguage();
   return (
     <SectionContainer id="about" labelledBy="about-title">
       <SectionHeader
         id="about-title"
         number="03"
-        label="About_me"
-        title="About Me"
+        label={t.about.label}
+        title={t.about.title}
       />
 
       <div className="grid gap-10 lg:grid-cols-[2fr_3fr]">
@@ -41,61 +43,55 @@ export function About() {
               Carlos Alberto Kaar
             </p>
 
-            <p className="mt-1 text-sm text-muted">Junior Backend Developer</p>
+            <p className="mt-1 text-sm text-muted">{t.about.role}</p>
           </div>
         </div>
 
         <div className="space-y-6">
           <div className="space-y-3">
             <p className="font-mono text-sm text-muted">
-              From operations to backend systems.
+              {t.about.intro}
             </p>
 
             <h3 className="text-2xl font-semibold tracking-tight text-foreground">
-              Analytical thinking, operational discipline and a practical
-              approach to backend development.
+             {t.about.headline}
             </h3>
           </div>
 
           <div className="space-y-4 text-sm leading-7 text-muted sm:text-base">
             <p>
-              I spent nearly 12 years working in analytical and operational
-              roles at Banco Galicia, where accuracy, traceability and process
-              reliability were part of everyday work.
+              {t.about.paragraphs.background}
             </p>
 
             <p>
-              Today, I bring that same mindset to backend development, building
-              APIs, data integrations and maintainable systems with Node.js,
-              TypeScript and automated testing while continuing to deepen my
-              software engineering skills.
+              {t.about.paragraphs.present}
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="border border-line bg-surface/20 px-4 py-3">
               <p className="font-mono text-xs uppercase tracking-wider text-dim">
                 <span className="mr-2 text-accent">&gt;</span>
-                Analytical Thinking
+                {t.about.traits.analyticalThinking}
               </p>
             </div>
 
             <div className="border border-line bg-surface/20 px-4 py-3">
               <p className="font-mono text-xs uppercase tracking-wider text-dim">
                 <span className="mr-2 text-accent">&gt;</span>
-                Process Reliability
+                {t.about.traits.processReliability}
               </p>
             </div>
 
             <div className="border border-line bg-surface/20 px-4 py-3">
               <p className="font-mono text-xs uppercase tracking-wider text-dim">
                 <span className="mr-2 text-accent">&gt;</span>
-                Continuous Learning
+                {t.about.traits.continuousLearning}
               </p>
             </div>
             <div className="border border-line bg-surface/20 px-4 py-3">
               <p className="font-mono text-xs uppercase tracking-wider text-dim">
                 <span className="mr-2 text-accent">&gt;</span>
-                Problem Solving
+                {t.about.traits.problemSolving}
               </p>
             </div>
           </div>
