@@ -1,7 +1,6 @@
 export type Project = {
   id: ProjectId;
   title: string;
-  description: string;
   technologies: string[];
   isPrivate: boolean;
   repositoryUrl?: string;
