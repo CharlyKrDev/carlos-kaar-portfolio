@@ -63,6 +63,15 @@ export type TranslationDictionary = {
     title: string;
     description: string;
   };
+  certifications: {
+    label: string;
+    title: string;
+    description: string;
+
+    actions: {
+      viewCredential: string;
+    };
+  };
 };
 
 import type { Language } from "./language";

@@ -87,4 +87,14 @@ export const es: TranslationDictionary = {
     description:
       "Tecnologías y prácticas que utilizo para construir, probar y mantener sistemas backend.",
   },
+  certifications: {
+    label: "Certificaciones",
+    title: "Formación y certificaciones",
+    description:
+      "Cursos y certificaciones que acompañan mi formación continua en ingeniería de software.",
+
+    actions: {
+      viewCredential: "Ver certificado",
+    },
+  },
 };

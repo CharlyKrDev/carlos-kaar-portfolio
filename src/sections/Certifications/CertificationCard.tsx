@@ -1,10 +1,12 @@
 import type { Certification } from "../../types/certification";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 type CertificationCardProps = {
   certification: Certification;
 };
 
 export function CertificationCard({ certification }: CertificationCardProps) {
+  const { t } = useLanguage();
   return (
     <article
       className="
@@ -63,7 +65,7 @@ export function CertificationCard({ certification }: CertificationCardProps) {
             rel="noreferrer"
             className="font-mono text-sm text-accent transition-colors duration-200 hover:text-accent-hover"
           >
-            &gt; view credential
+            &gt; {t.certifications.actions.viewCredential}{" "}
           </a>
         </div>
       )}
