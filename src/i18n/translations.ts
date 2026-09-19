@@ -82,6 +82,17 @@ export type TranslationDictionary = {
   common: {
     role: string;
   };
+
+  systemPanel: {
+    labels: {
+      location: string;
+      role: string;
+      status: string;
+    };
+
+    location: string;
+    status: string;
+  };
 };
 
 import type { Language } from "./language";

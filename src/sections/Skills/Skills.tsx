@@ -17,7 +17,7 @@ export function Skills() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {skillCategories.map((category) => (
           <article key={category.id} className="border border-line p-5">
-            <h3 className="font-mono text-sm uppercase tracking-wider text-slate-300">
+            <h3 className="font-mono text-sm uppercase tracking-wider text-foreground-subtle">
               {category.title}
             </h3>
 

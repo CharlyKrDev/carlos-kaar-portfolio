@@ -108,4 +108,14 @@ export const es: TranslationDictionary = {
   common: {
     role: "Junior Backend Developer",
   },
+  systemPanel: {
+    labels: {
+      location: "Ubicación",
+      role: "Rol",
+      status: "Estado",
+    },
+
+    location: "Piacenza, Italia",
+    status: "Abierto a oportunidades",
+  },
 };

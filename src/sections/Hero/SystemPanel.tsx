@@ -1,28 +1,9 @@
+import { useLanguage } from "../../i18n/LanguageContext";
 type SystemRowProps = {
   label: string;
   value: string;
   accent?: boolean;
 };
-
-const profileRows: SystemRowProps[] = [
-  {
-    label: "location",
-    value: "Piacenza, Italy",
-  },
-  {
-    label: "role",
-    value: "Junior Backend Developer",
-  },
-  {
-    label: "focus",
-    value: "APIs & Systems",
-  },
-  {
-    label: "status",
-    value: "Open to opportunities",
-    accent: true,
-  },
-];
 
 const stackRows: SystemRowProps[] = [
   {
@@ -46,7 +27,9 @@ function SystemRow({ label, value, accent = false }: SystemRowProps) {
         {label}
       </dt>
 
-      <dd className={`text-sm ${accent ? "text-success" : "text-slate-300"}`}>
+      <dd
+        className={`text-sm ${accent ? "text-success" : "text-foreground-subtle"}`}
+      >
         {value}
       </dd>
     </div>
@@ -54,13 +37,36 @@ function SystemRow({ label, value, accent = false }: SystemRowProps) {
 }
 
 export function SystemPanel() {
+  const { t } = useLanguage();
+
+  const profileRows: SystemRowProps[] = [
+    {
+      label: t.systemPanel.labels.location,
+      value: t.systemPanel.location,
+    },
+    {
+      label: t.systemPanel.labels.role,
+      value: t.common.role,
+    },
+    {
+      label: "focus",
+      value: "APIs & Systems",
+    },
+    {
+      label: t.systemPanel.labels.status,
+      value: t.systemPanel.status,
+      accent: true,
+    },
+  ];
   return (
     <aside
-      aria-label="Developer prfile summary"
-      className="border border-salte-700 p-6"
+      aria-label="Developer profile summary"
+      className="border border-line-strong p-6"
     >
-      <header className="flex items-center justify-between border-b boder-line pb-4">
-        <p className="font-mono text-sm text-salte-300">SYSTEM / PROFILE</p>
+      <header className="flex items-center justify-between border-b border-line pb-4">
+        <p className="font-mono text-sm text-foreground-subtle">
+          SYSTEM / PROFILE
+        </p>
         <span className="font-mono text-xs uppercase tracking-wider text-success">
           online
         </span>
