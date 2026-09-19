@@ -4,50 +4,50 @@ import { translations } from "./translations";
 import { LanguageContext } from "./LanguageContext";
 
 type LanguageProviderProps = {
-    children: ReactNode;
+  children: ReactNode;
 };
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
-        const [language, setLanguage] = useState<Language>(() => {
-            const savedLanguage = localStorage.getItem("language");
+  const [language, setLanguage] = useState<Language>(() => {
+    const savedLanguage = localStorage.getItem("language");
 
-            if (
-                savedLanguage === "en" ||
-                savedLanguage === "es" ||
-                savedLanguage === "it"
-            ) {
-                return savedLanguage;
-            }
-
-            const browserLanguage = navigator.language.toLowerCase();
-
-            if (browserLanguage.startsWith("es")) {
-                return "es";
-            }
-
-            if (browserLanguage.startsWith("it")) {
-                return "it";
-            }
-
-            return "en";
-        });
-
-
-        useEffect(() => {
-            localStorage.setItem("language", language);
-        }, [language]);
-
-        const t = translations[language];
-
-        return (
-            <LanguageContext.Provider
-                value={{
-                    language,
-                    setLanguage,
-                    t,
-                }}
-            >
-                {children}
-            </LanguageContext.Provider>
-        );
+    if (
+      savedLanguage === "en" ||
+      savedLanguage === "es" ||
+      savedLanguage === "it"
+    ) {
+      return savedLanguage;
     }
+
+    const browserLanguage = navigator.language.toLowerCase();
+
+    if (browserLanguage.startsWith("es")) {
+      return "es";
+    }
+
+    if (browserLanguage.startsWith("it")) {
+      return "it";
+    }
+
+    return "en";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("language", language);
+    document.documentElement.lang = language;
+  }, [language]);
+
+  const t = translations[language];
+
+  return (
+    <LanguageContext.Provider
+      value={{
+        language,
+        setLanguage,
+        t,
+      }}
+    >
+      {children}
+    </LanguageContext.Provider>
+  );
+}
