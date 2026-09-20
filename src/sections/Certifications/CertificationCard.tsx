@@ -1,5 +1,6 @@
 import type { Certification } from "../../types/certification";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { trackCredentialClick } from "../../analytics/events";
 
 type CertificationCardProps = {
   certification: Certification;
@@ -63,6 +64,11 @@ export function CertificationCard({ certification }: CertificationCardProps) {
             href={certification.credentialUrl}
             target="_blank"
             rel="noreferrer"
+            onClick={() =>
+              trackCredentialClick({
+                credentialId: certification.id,
+              })
+            }
             className="font-mono text-sm text-accent transition-colors duration-200 hover:text-accent-hover"
           >
             &gt; {t.certifications.actions.viewCredential}

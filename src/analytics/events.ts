@@ -11,20 +11,16 @@ type LanguageChangeParams = {
   fromLanguage: Language;
   toLanguage: Language;
 };
-type ProjectDestination =
-  | "technical_overview"
-  | "repository"
-  | "live_site";
+type ProjectDestination = "technical_overview" | "repository" | "live_site";
 
 type ProjectClickParams = {
   projectId: ProjectId;
   destination: ProjectDestination;
 };
-
-export function trackCvDownload({
-  language,
-  fileUrl,
-}: CvDownloadParams) {
+type CredentialClickParams = {
+  credentialId: string;
+};
+export function trackCvDownload({ language, fileUrl }: CvDownloadParams) {
   const fileName = fileUrl.split("/").pop() ?? fileUrl;
 
   trackEvent("cv_download", {
@@ -50,5 +46,15 @@ export function trackProjectClick({
   trackEvent("project_click", {
     project_id: projectId,
     destination,
+  });
+  
+}
+
+
+export function trackCredentialClick({
+  credentialId,
+}: CredentialClickParams) {
+  trackEvent("credential_click", {
+    credential_id: credentialId,
   });
 }
