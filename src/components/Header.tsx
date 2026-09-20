@@ -113,7 +113,7 @@ export function Header() {
             type="button"
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
-            aria-controls={t.accessibility.mobileNavigation}
+            aria-controls="mobile-navigation"
             className="font-mono text-xs uppercase tracking-wider text-muted focus-ring md:hidden cursor-pointer"
           >
             {isOpen ? `[ ${t.navigation.close} ]` : `[ ${t.navigation.menu} ]`}
@@ -123,7 +123,7 @@ export function Header() {
         {isOpen && (
           <nav
             id="mobile-navigation"
-            aria-label="Mobile navigation"
+            aria-label={t.accessibility.mobileNavigation}
             className="border-t border-line py-4 md:hidden"
           >
             <ul className="space-y-4">
