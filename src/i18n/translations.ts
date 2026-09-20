@@ -107,6 +107,15 @@ export type TranslationDictionary = {
     reject: string;
     settings: string;
   };
+  privacy: {
+    label: string;
+    title: string;
+    description: string;
+    analyticsTitle: string;
+    analyticsDescription: string;
+    consentDescription: string;
+    close: string;
+  };
 };
 
 import type { Language } from "./language";

@@ -133,4 +133,16 @@ export const es: TranslationDictionary = {
     reject: "Rechazar",
     settings: "Configurar analítica",
   },
+  privacy: {
+    label: "Privacidad",
+    title: "Privacidad y analítica",
+    description:
+      "Este portfolio no utiliza cookies publicitarias ni de perfilado.",
+    analyticsTitle: "Google Analytics",
+    analyticsDescription:
+      "Google Analytics 4 se utiliza para entender cómo interactúan los visitantes con el portfolio, como el uso de la página y determinadas acciones.",
+    consentDescription:
+      "La analítica se activa únicamente después de tu consentimiento. Puedes cambiar tu elección en cualquier momento desde Configurar analítica en el footer.",
+    close: "Cerrar",
+  },
 };
