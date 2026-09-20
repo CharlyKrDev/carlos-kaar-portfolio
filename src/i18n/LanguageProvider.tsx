@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
-import type { Language } from "./language";
+import { defaultLanguage, type Language } from "./language";
 import { translations } from "./translations";
 import { LanguageContext } from "./LanguageContext";
 
@@ -22,7 +22,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     const browserLanguage = navigator.language.toLowerCase();
 
     if (browserLanguage.startsWith("es")) {
-      return "es";
+      return defaultLanguage;
     }
 
     if (browserLanguage.startsWith("it")) {
