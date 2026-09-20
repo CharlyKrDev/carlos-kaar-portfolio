@@ -1,7 +1,9 @@
 import { useLanguage } from "../../i18n/LanguageContext";
 import { cvByLanguage } from "../../data/cv";
+import { trackCvDownload } from "../../analytics/events";
 export function HeroContent() {
   const { t, language } = useLanguage();
+  const cvUrl = cvByLanguage[language];
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
@@ -57,8 +59,14 @@ export function HeroContent() {
         </a>
 
         <a
-          href={cvByLanguage[language]}
+          href={cvUrl}
           download
+          onClick={() =>
+            trackCvDownload({
+              language,
+              fileUrl: cvUrl,
+            })
+          }
           className="
           focus-ring
           inline-flex

@@ -14,12 +14,11 @@ export function loadGoogleAnalytics() {
 
   window.dataLayer = window.dataLayer || [];
 
-  window.gtag = (...args: unknown[]) => {
-    window.dataLayer.push(args);
+  window.gtag = function () {
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer.push(arguments);
   };
 
-  // Analytics permitido.
-  // Advertising permanece desactivado.
   window.gtag("consent", "default", {
     analytics_storage: "granted",
     ad_storage: "denied",
@@ -28,7 +27,6 @@ export function loadGoogleAnalytics() {
   });
 
   window.gtag("js", new Date());
-
   window.gtag("config", GA_MEASUREMENT_ID);
 
   const script = document.createElement("script");
