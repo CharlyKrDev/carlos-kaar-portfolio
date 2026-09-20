@@ -6,6 +6,11 @@ type CvDownloadParams = {
   fileUrl: string;
 };
 
+type LanguageChangeParams = {
+  fromLanguage: Language;
+  toLanguage: Language;
+};
+
 export function trackCvDownload({
   language,
   fileUrl,
@@ -15,5 +20,15 @@ export function trackCvDownload({
   trackEvent("cv_download", {
     cv_language: language,
     file_name: fileName,
+  });
+}
+
+export function trackLanguageChange({
+  fromLanguage,
+  toLanguage,
+}: LanguageChangeParams) {
+  trackEvent("language_change", {
+    from_language: fromLanguage,
+    to_language: toLanguage,
   });
 }
