@@ -1,5 +1,6 @@
 import type { Project, ProjectStatus } from "../../types/project";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { trackProjectClick } from "../../analytics/events";
 
 const statusStyles: Record<ProjectStatus, string> = {
   "in-development": "bg-accent",
@@ -101,6 +102,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={project.documentationUrl}
             target="_blank"
             rel="noreferrer"
+            onClick={() =>
+              trackProjectClick({
+                projectId: project.id,
+                destination: "technical_overview",
+              })}
             className="
         font-mono
         text-sm
@@ -120,6 +126,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={project.repositoryUrl}
             target="_blank"
             rel="noreferrer"
+            onClick={() =>
+              trackProjectClick({
+                projectId: project.id,
+                destination: "repository",
+              })}
             className="
         font-mono
         text-sm
@@ -139,6 +150,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={project.liveUrl}
             target="_blank"
             rel="noreferrer"
+            onClick={() =>
+              trackProjectClick({
+                projectId: project.id,
+                destination: "live_site",
+              })}
             className="
         font-mono
         text-sm

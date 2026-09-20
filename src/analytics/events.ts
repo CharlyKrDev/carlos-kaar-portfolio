@@ -1,4 +1,5 @@
 import type { Language } from "../i18n/language";
+import type { ProjectId } from "../types/project";
 import { trackEvent } from "./googleAnalytics";
 
 type CvDownloadParams = {
@@ -9,6 +10,15 @@ type CvDownloadParams = {
 type LanguageChangeParams = {
   fromLanguage: Language;
   toLanguage: Language;
+};
+type ProjectDestination =
+  | "technical_overview"
+  | "repository"
+  | "live_site";
+
+type ProjectClickParams = {
+  projectId: ProjectId;
+  destination: ProjectDestination;
 };
 
 export function trackCvDownload({
@@ -30,5 +40,15 @@ export function trackLanguageChange({
   trackEvent("language_change", {
     from_language: fromLanguage,
     to_language: toLanguage,
+  });
+}
+
+export function trackProjectClick({
+  projectId,
+  destination,
+}: ProjectClickParams) {
+  trackEvent("project_click", {
+    project_id: projectId,
+    destination,
   });
 }
