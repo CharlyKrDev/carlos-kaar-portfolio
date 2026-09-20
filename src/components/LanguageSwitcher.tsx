@@ -2,8 +2,7 @@ import { supportedLanguages } from "../i18n/language";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export function LanguageSwitcher() {
-  const { language, setLanguage } = useLanguage();
-  const { t } = useLanguage();
+  const { t, language, setLanguage } = useLanguage();
 
   return (
     <div
