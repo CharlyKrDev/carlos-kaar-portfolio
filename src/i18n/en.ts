@@ -131,5 +131,6 @@ export const en: TranslationDictionary = {
       "This site uses Google Analytics only with your permission to understand how the portfolio is used. Advertising cookies are not used.",
     accept: "Accept analytics",
     reject: "Decline",
+    settings: "Analytics settings",
   },
 };

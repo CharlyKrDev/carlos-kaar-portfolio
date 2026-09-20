@@ -1,26 +1,19 @@
 import { useEffect, useState } from "react";
 import { loadGoogleAnalytics } from "../analytics/googleAnalytics";
+import {
+  getAnalyticsConsent,
+  saveAnalyticsConsent,
+  type AnalyticsConsentState,
+} from "../analytics/consent";
 import { useLanguage } from "../i18n/LanguageContext";
-
-const CONSENT_STORAGE_KEY = "analytics-consent";
-
-type ConsentState = "granted" | "denied";
 
 export function AnalyticsConsent() {
   const { t } = useLanguage();
 
-  const [consent, setConsent] = useState<ConsentState | null>(() => {
-    const savedConsent = localStorage.getItem(CONSENT_STORAGE_KEY);
-
-    if (
-      savedConsent === "granted" ||
-      savedConsent === "denied"
-    ) {
-      return savedConsent;
-    }
-
-    return null;
-  });
+  const [consent, setConsent] =
+    useState<AnalyticsConsentState | null>(() =>
+      getAnalyticsConsent(),
+    );
 
   useEffect(() => {
     if (consent === "granted") {
@@ -29,20 +22,12 @@ export function AnalyticsConsent() {
   }, [consent]);
 
   const acceptAnalytics = () => {
-    localStorage.setItem(
-      CONSENT_STORAGE_KEY,
-      "granted",
-    );
-
+    saveAnalyticsConsent("granted");
     setConsent("granted");
   };
 
   const rejectAnalytics = () => {
-    localStorage.setItem(
-      CONSENT_STORAGE_KEY,
-      "denied",
-    );
-
+    saveAnalyticsConsent("denied");
     setConsent("denied");
   };
 

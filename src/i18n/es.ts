@@ -131,5 +131,6 @@ export const es: TranslationDictionary = {
       "Este sitio utiliza Google Analytics únicamente con tu permiso para entender cómo se utiliza el portfolio. No se utilizan cookies publicitarias.",
     accept: "Aceptar analítica",
     reject: "Rechazar",
+    settings: "Configurar analítica",
   },
 };

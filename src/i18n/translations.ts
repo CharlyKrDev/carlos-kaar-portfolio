@@ -105,6 +105,7 @@ export type TranslationDictionary = {
     description: string;
     accept: string;
     reject: string;
+    settings: string;
   };
 };
 
