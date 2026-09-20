@@ -22,14 +22,14 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     const browserLanguage = navigator.language.toLowerCase();
 
     if (browserLanguage.startsWith("es")) {
-      return defaultLanguage;
+      return "es";
     }
 
     if (browserLanguage.startsWith("it")) {
       return "it";
     }
 
-    return "en";
+     return defaultLanguage;
   });
 
   useEffect(() => {
