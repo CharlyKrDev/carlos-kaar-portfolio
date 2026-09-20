@@ -41,7 +41,7 @@ export const certifications: Certification[] = [
     title: "Data & Analytics — Starter Level",
     issuer: "Grupo Financiero Galicia / Datalytics",
     year: 2023,
-    credentialUrl:"/certificates/Data & Analytics — Starter Level.png",
+    credentialUrl:"/certificates/data-analytics-starter.pdf",
     skills: ["SQL", "PostgreSQL", "Data Analysis"]
   },
   {

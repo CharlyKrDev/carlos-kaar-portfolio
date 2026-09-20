@@ -54,13 +54,13 @@ export function Header() {
           <a
             href="#home"
             className="focus-ring"
-            aria-label="Carlos Kaar — Home"
+            aria-label={t.accessibility.homeLink}
           >
             <BrandMark />
           </a>
 
           <div className="hidden items-center gap-6 md:flex">
-            <nav aria-label="Main navigation">
+            <nav aria-label={t.accessibility.mainNavigation}>
               <ul className="flex items-center gap-6">
                 {navItems.map((item) => (
                   <li key={item.id}>
@@ -100,10 +100,10 @@ export function Header() {
             type="button"
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
-            aria-controls="mobile-navigation"
+            aria-controls={t.accessibility.mobileNavigation}
             className="font-mono text-xs uppercase tracking-wider text-muted focus-ring md:hidden cursor-pointer"
           >
-            {isOpen ? "[ close ]" : "[ menu ]"}
+            {isOpen ? `[ ${t.navigation.close} ]` : `[ ${t.navigation.menu} ]`}
           </button>
         </div>
 

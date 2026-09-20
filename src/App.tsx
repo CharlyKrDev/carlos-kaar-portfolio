@@ -1,4 +1,3 @@
-import "./App.css";
 import { Hero } from "./sections/Hero/Hero";
 import { Projects } from "./sections/Projects/Projects";
 import { About } from "./sections/About/About";

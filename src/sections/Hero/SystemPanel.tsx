@@ -60,7 +60,7 @@ export function SystemPanel() {
   ];
   return (
     <aside
-      aria-label="Developer profile summary"
+      aria-label={t.accessibility.developerProfileSummary}
       className="border border-line-strong p-6"
     >
       <header className="flex items-center justify-between border-b border-line pb-4">

@@ -3,11 +3,12 @@ import { useLanguage } from "../i18n/LanguageContext";
 
 export function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <div
       role="group"
-      aria-label="Language selector"
+      aria-label={t.accessibility.languageSelector}
       className="flex items-center gap-2 font-mono text-xs"
     >
       <span className="text-dim">LANG=</span>
@@ -22,20 +23,14 @@ export function LanguageSwitcher() {
             onClick={() => setLanguage(item)}
             aria-pressed={isActive}
             className={`cursor-pointer transition-colors duration-200 focus-ring ${
-              isActive
-                ? "text-accent"
-                : "text-muted hover:text-accent"
+              isActive ? "text-accent" : "text-muted hover:text-accent"
             }`}
           >
-            {isActive && (
-              <span className="text-accent-secondary">[</span>
-            )}
+            {isActive && <span className="text-accent-secondary">[</span>}
 
             {item.toUpperCase()}
 
-            {isActive && (
-              <span className="text-accent-secondary">]</span>
-            )}
+            {isActive && <span className="text-accent-secondary">]</span>}
           </button>
         );
       })}

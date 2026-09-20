@@ -65,7 +65,7 @@ export function CertificationCard({ certification }: CertificationCardProps) {
             rel="noreferrer"
             className="font-mono text-sm text-accent transition-colors duration-200 hover:text-accent-hover"
           >
-            &gt; {t.certifications.actions.viewCredential}{" "}
+            &gt; {t.certifications.actions.viewCredential}
           </a>
         </div>
       )}

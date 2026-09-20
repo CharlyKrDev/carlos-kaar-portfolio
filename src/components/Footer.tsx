@@ -1,7 +1,9 @@
 import { BrandMark } from "./BrandMark";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="border-t border-line">
@@ -11,13 +13,13 @@ export function Footer() {
             <a
               href="#home"
               className="focus-ring"
-              aria-label="Carlos Kaar — Home"
+              aria-label={t.accessibility.homeLink}
             >
               <BrandMark />
             </a>
 
             <p className="font-mono text-xs text-dim">
-              Junior Backend Developer
+              {t.common.role}
             </p>
           </div>
 

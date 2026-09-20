@@ -118,4 +118,11 @@ export const en: TranslationDictionary = {
     location: "Piacenza, Italy",
     status: "Open to opportunities",
   },
+  accessibility: {
+    mainNavigation: "Main navigation",
+    mobileNavigation: "Mobile navigation",
+    languageSelector: "Language selector",
+    developerProfileSummary: "Developer profile summary",
+    homeLink: "Carlos Kaar — Home",
+  },
 };

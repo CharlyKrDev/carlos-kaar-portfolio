@@ -39,7 +39,7 @@ export function About() {
             <span className="pointer-events-none absolute bottom-3 right-3 h-4 w-4 border-b border-r border-accent-secondary" />
           </div>
           <div className="mt-4 border-t border-line pt-4">
-            <p className="font-mono text-sm text-slate-200">
+            <p className="font-mono text-sm text-foreground-subtle">
               Carlos Alberto Kaar
             </p>
 

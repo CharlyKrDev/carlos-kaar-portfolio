@@ -106,7 +106,7 @@ export const es: TranslationDictionary = {
     },
   },
   common: {
-    role: "Junior Backend Developer",
+    role: "Desarrollador Backend Junior",
   },
   systemPanel: {
     labels: {
@@ -117,5 +117,12 @@ export const es: TranslationDictionary = {
 
     location: "Piacenza, Italia",
     status: "Abierto a oportunidades",
+  },
+  accessibility: {
+    mainNavigation: "Navegación principal",
+    mobileNavigation: "Navegación móvil",
+    languageSelector: "Selector de idioma",
+    developerProfileSummary: "Resumen del perfil del desarrollador",
+    homeLink: "Carlos Kaar — Inicio",
   },
 };

@@ -93,6 +93,13 @@ export type TranslationDictionary = {
     location: string;
     status: string;
   };
+  accessibility: {
+    mainNavigation: string;
+    mobileNavigation: string;
+    languageSelector: string;
+    developerProfileSummary: string;
+    homeLink: string;
+  };
 };
 
 import type { Language } from "./language";
