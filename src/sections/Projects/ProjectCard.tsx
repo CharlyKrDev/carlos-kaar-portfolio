@@ -30,7 +30,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     border-line
     p-6
     text-foreground
-    transition-[border-color,background-color,transform]
+    transition
     duration-200
     hover:border-line-strong
     hover:bg-surface/30
