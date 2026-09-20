@@ -20,6 +20,14 @@ type ProjectClickParams = {
 type CredentialClickParams = {
   credentialId: string;
 };
+
+type ContactMethod = "email" | "linkedin" | "github";
+
+type ContactClickParams = {
+  method: ContactMethod;
+  source: "contact_list" | "primary_cta";
+};
+
 export function trackCvDownload({ language, fileUrl }: CvDownloadParams) {
   const fileName = fileUrl.split("/").pop() ?? fileUrl;
 
@@ -47,14 +55,20 @@ export function trackProjectClick({
     project_id: projectId,
     destination,
   });
-  
 }
 
-
-export function trackCredentialClick({
-  credentialId,
-}: CredentialClickParams) {
+export function trackCredentialClick({ credentialId }: CredentialClickParams) {
   trackEvent("credential_click", {
     credential_id: credentialId,
+  });
+}
+
+export function trackContactClick({
+  method,
+  source,
+}: ContactClickParams) {
+  trackEvent("contact_click", {
+    method,
+    source,
   });
 }

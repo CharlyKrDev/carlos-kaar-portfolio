@@ -1,8 +1,12 @@
 import { SectionContainer } from "../../components/SectionContainer";
 import { SectionHeader } from "../../components/SectionHeader";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { trackContactClick } from "../../analytics/events";
+
+type ContactMethod = "email" | "linkedin" | "github";
 
 type ContactItem = {
+  method: ContactMethod;
   label: string;
   value: string;
   href: string;
@@ -11,17 +15,20 @@ type ContactItem = {
 
 const contactItems: ContactItem[] = [
   {
+    method: "email",
     label: "Email",
     value: "kaar.carlos@gmail.com",
     href: "mailto:kaar.carlos@gmail.com",
   },
   {
+    method: "linkedin",
     label: "LinkedIn",
     value: "/in/carlos-alberto-kaar",
     href: "https://www.linkedin.com/in/carlos-alberto-kaar",
     external: true,
   },
   {
+    method: "github",
     label: "GitHub",
     value: "/CharlyKrDev",
     href: "https://github.com/CharlyKrDev",
@@ -37,7 +44,7 @@ export function Contact() {
         number="06"
         label={t.contact.label}
         title={t.contact.title}
-        description={t.contact.description}/>
+        description={t.contact.description} />
       <div className="border border-line p-6">
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <dl className="space-y-4">
@@ -55,6 +62,12 @@ export function Contact() {
                     href={item.href}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
+                    onClick={() =>
+                      trackContactClick({
+                        method: item.method,
+                        source: "contact_list",
+                      })
+                    }
                     className="text-sm text-foreground transition-colors duration-200 hover:text-accent focus-ring"
                   >
                     {item.value}
@@ -66,15 +79,13 @@ export function Contact() {
 
           <a
             href="mailto:kaar.carlos@gmail.com"
-            className="
-    inline-flex min-w-44 items-center justify-center
-    border border-accent bg-accent
-    px-5 py-3 font-mono text-sm text-canvas
-    transition-colors duration-200
-    hover:border-accent-hover hover:bg-accent-hover
-    focus-ring
-  "
-          >
+            onClick={() =>
+              trackContactClick({
+                method: "email",
+                source: "primary_cta",
+              })
+            }
+            className="inline-flex min-w-44 items-center justify-center border border-accent bg-accent px-5 py-3 font-mono text-sm text-canvas transition-colors duration-200 hover:border-accent-hover hover:bg-accent-hover focus-ring">
             &gt; {t.contact.actions.sendEmail}
           </a>
         </div>
