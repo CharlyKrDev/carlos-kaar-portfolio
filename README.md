@@ -2,19 +2,19 @@
 
 Personal developer portfolio built with React, TypeScript, Vite and Tailwind CSS.
 
-The project presents my backend development work, technical stack, professional background and certifications through a responsive single-page interface with a technical / system-inspired visual language.
+The site presents my backend development work, technical stack, professional background and certifications through a responsive single-page interface with a technical / system-inspired visual language.
 
-> Currently under active development and visual refinement.
+**Production:** https://carloskaar.dev
 
 ---
 
 ## About the Project
 
-This portfolio was built from scratch as both a professional website and a practical frontend learning project.
+This portfolio was built from scratch as both a professional website and a practical software development project.
 
-The main goal is to present my profile as a Junior Backend Developer while keeping the interface focused on clarity, maintainability, accessibility and responsive design.
+Its main goal is to present my profile as a Junior Backend Developer while keeping the interface focused on clarity, maintainability, accessibility, performance and responsive design.
 
-Rather than using a pre-built portfolio template, the UI and component architecture were designed specifically for this project.
+Rather than using a pre-built portfolio template, the UI, component architecture, design system and multilingual experience were designed specifically for this project.
 
 ---
 
@@ -43,16 +43,46 @@ The portfolio is organized as a single-page application:
 It also includes:
 
 - Sticky responsive navigation
-- Mobile menu
-- Active section navigation
-- Downloadable CV
+- Mobile menu with Escape-key support
+- Active-section tracking
+- EN / ES / IT language selector
+- Browser-language detection
+- Persisted language preference with `localStorage`
+- Dynamic `<html lang>` synchronization
+- Language-specific CV downloads
 - Responsive layouts
 - Keyboard focus states
 - Semantic HTML
+- Accessibility labels
 - SEO metadata
 - Open Graph metadata
 - Sitemap
-- robots.txt
+- `robots.txt`
+
+---
+
+## Internationalization
+
+The portfolio includes a custom typed i18n system built without an external internationalization library.
+
+Supported languages:
+
+- English
+- Spanish
+- Italian
+
+The system includes:
+
+- Typed language values with TypeScript
+- Centralized translation dictionaries
+- Shared translation contracts
+- Automatic browser-language detection
+- Persisted user language preference
+- Dynamic document language updates
+- Language-specific CV files
+- Translated navigation, sections, actions and accessibility labels
+
+The implementation keeps technical data separate from translated copy so that project metadata, technologies and resource URLs remain independent from presentation language.
 
 ---
 
@@ -68,6 +98,10 @@ Main technologies:
 - Express
 - Jest
 - Supertest
+
+A public technical overview is available inside this repository:
+
+`docs/betty/README.md`
 
 ---
 
@@ -90,7 +124,7 @@ https://github.com/CharlyKrDev/modular-ecommerce-backend-api
 
 ### Centro de Neurología
 
-Production website developed for a medical center in Argentina, with focus on performance, accessibility and technical SEO.
+Production website developed for a medical center in Argentina, focused on performance, accessibility and technical SEO.
 
 Main technologies:
 
@@ -110,21 +144,36 @@ https://www.centrodeneurologia.com.ar/
 
 ## Architecture
 
-The project separates reusable UI, page sections, data and TypeScript models.
+The project separates reusable UI, page sections, data, translations and TypeScript models.
 
 ```text
 src/
+├── assets/
+│   └── carlos-kaar-profile.webp
+│
 ├── components/
+│   ├── BrandMark.tsx
 │   ├── Footer.tsx
 │   ├── Header.tsx
+│   ├── LanguageSwitcher.tsx
 │   ├── SectionContainer.tsx
 │   └── SectionHeader.tsx
 │
 ├── data/
 │   ├── certifications.ts
+│   ├── cv.ts
 │   ├── navigation.ts
 │   ├── projects.ts
 │   └── skills.ts
+│
+├── i18n/
+│   ├── en.ts
+│   ├── es.ts
+│   ├── it.ts
+│   ├── language.ts
+│   ├── LanguageContext.ts
+│   ├── LanguageProvider.tsx
+│   └── translations.ts
 │
 ├── sections/
 │   ├── About/
@@ -158,6 +207,7 @@ surface
 line
 line-strong
 foreground
+foreground-subtle
 muted
 dim
 accent
@@ -165,7 +215,7 @@ accent-secondary
 success
 ```
 
-Typography also follows a functional distinction:
+Typography follows a functional distinction:
 
 - **Inter** → primary content and readable text
 - **JetBrains Mono** → navigation, metadata, system labels and technical details
@@ -176,15 +226,18 @@ The visual direction combines a dark technical interface with restrained termina
 
 ## Accessibility
 
-The project currently includes:
+The project includes:
 
 - Semantic HTML landmarks
 - `aria-labelledby` relationships
-- Accessible navigation labels
-- `aria-expanded` for the mobile menu
+- Localized accessibility labels
+- `aria-expanded` and `aria-controls` for mobile navigation
 - Keyboard navigation
+- Escape-key support for closing the mobile menu
 - Visible keyboard focus states
+- Dynamic document language
 - Responsive typography and layout
+- Descriptive image alternative text
 
 ---
 
@@ -205,6 +258,22 @@ Implemented:
 Production domain:
 
 `carloskaar.dev`
+
+Further analytics and search-performance instrumentation are handled separately from the core portfolio application.
+
+---
+
+## CV Downloads
+
+The portfolio serves a different CV according to the selected language:
+
+```text
+EN → Carlos_Alberto_Kaar_CV_EN.pdf
+ES → Carlos_Alberto_Kaar_CV_ES.pdf
+IT → Carlos_Alberto_Kaar_CV_IT.pdf
+```
+
+The language-to-file mapping is typed with TypeScript to ensure that every supported language has a corresponding CV.
 
 ---
 
@@ -234,28 +303,37 @@ Start the development server:
 npm run dev
 ```
 
+Run linting:
+
+```bash
+npm run lint
+```
+
 Create a production build:
 
 ```bash
 npm run build
 ```
 
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
 ---
 
-## Current Status
+## Status
 
-The main application architecture and responsive layout are complete.
+The core portfolio application is complete and deployed in production.
 
-Current work focuses on:
+Current maintenance focuses on:
 
-- Visual polish
-- Final branding
-- About profile photo
-- Microinteraction review
-- Content review
-- Final SEO validation
-- Performance and Lighthouse testing
-- Production deployment
+- SEO validation
+- Search Console integration
+- Analytics and interaction tracking
+- Performance monitoring
+- Ongoing content and project updates
 
 ---
 
