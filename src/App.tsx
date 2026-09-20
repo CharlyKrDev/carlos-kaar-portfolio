@@ -5,7 +5,8 @@ import { Skills } from "./sections/Skills/Skills";
 import { Certifications } from "./sections/Certifications/Certifications";
 import { Contact } from "./sections/Contact/Contact";
 import { Header } from "./components/Header";
-import {Footer} from "./components/Footer";
+import { Footer } from "./components/Footer";
+import { AnalyticsConsent } from "./components/AnalyticsConsent";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <AnalyticsConsent />
     </>
   );
 }

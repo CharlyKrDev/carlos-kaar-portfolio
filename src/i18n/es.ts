@@ -125,4 +125,11 @@ export const es: TranslationDictionary = {
     developerProfileSummary: "Resumen del perfil del desarrollador",
     homeLink: "Carlos Kaar — Inicio",
   },
+  consent: {
+    title: "Analítica",
+    description:
+      "Este sitio utiliza Google Analytics únicamente con tu permiso para entender cómo se utiliza el portfolio. No se utilizan cookies publicitarias.",
+    accept: "Aceptar analítica",
+    reject: "Rechazar",
+  },
 };

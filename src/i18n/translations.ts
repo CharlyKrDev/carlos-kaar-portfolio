@@ -100,6 +100,12 @@ export type TranslationDictionary = {
     developerProfileSummary: string;
     homeLink: string;
   };
+  consent: {
+    title: string;
+    description: string;
+    accept: string;
+    reject: string;
+  };
 };
 
 import type { Language } from "./language";

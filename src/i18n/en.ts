@@ -125,4 +125,11 @@ export const en: TranslationDictionary = {
     developerProfileSummary: "Developer profile summary",
     homeLink: "Carlos Kaar — Home",
   },
+  consent: {
+    title: "Analytics",
+    description:
+      "This site uses Google Analytics only with your permission to understand how the portfolio is used. Advertising cookies are not used.",
+    accept: "Accept analytics",
+    reject: "Decline",
+  },
 };
