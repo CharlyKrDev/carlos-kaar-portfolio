@@ -51,7 +51,8 @@ export function Footer() {
             <button
               type="button"
               onClick={handleAnalyticsSettings}
-              className="cursor-pointer font-mono text-xs text-muted transition-colors hover:text-foreground focus-ring">
+              className="cursor-pointer font-mono text-xs text-muted transition-colors hover:text-foreground focus-ring"
+            >
               <span aria-hidden="true" className="text-accent">
                 {"> "}
               </span>
